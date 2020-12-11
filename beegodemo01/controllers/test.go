@@ -52,3 +52,13 @@ func (c *TestController) TForm() {
 	fmt.Printf("%#v", u)
 	c.Ctx.WriteString("解析post成功")
 }
+
+func (c *TestController) TGetData() {
+	u := User{
+		Username: "张三",
+		Password: "123",
+		Hobby: []string{"1","2","3"},
+	}
+	c.Data["json"] = u
+	c.ServeJSON()
+}
