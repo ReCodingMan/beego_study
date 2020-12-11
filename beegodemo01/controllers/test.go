@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
+	"strconv"
 )
 
 type TestController struct {
@@ -20,5 +22,15 @@ func (c *TestController) TestPost() {
 
 func (c *TestController) TGet() {
 	id := c.GetString("id")
-	c.Ctx.WriteString("测试test方法" + id)//直接页面返回数据
+	c.Ctx.WriteString("测试 get 方法" + id)//直接页面返回数据
+}
+
+func (c *TestController) TPost() {
+	id, err := c.GetInt("id")
+	if err != nil {
+		c.Ctx.WriteString("id必须是整数")
+		return
+	}
+	fmt.Printf("%v--%T\n", id, id)
+	c.Ctx.WriteString("测试 post 方法" + strconv.Itoa(id))//直接页面返回数据
 }
