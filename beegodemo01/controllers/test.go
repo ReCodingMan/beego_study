@@ -9,7 +9,11 @@ type TestController struct {
 }
 
 func (c *TestController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
+	c.Data["title"] = "标题"
+	c.Data["num"] = 12
 	c.TplName = "test.tpl"
+}
+
+func (c *TestController) TestPost() {
+	c.Ctx.WriteString("新闻列表")//直接页面返回数据
 }
