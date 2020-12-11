@@ -34,3 +34,21 @@ func (c *TestController) TPost() {
 	fmt.Printf("%v--%T\n", id, id)
 	c.Ctx.WriteString("测试 post 方法" + strconv.Itoa(id))//直接页面返回数据
 }
+
+//定义一个结构体
+type User struct {
+	Username string `form:"username"`
+	Password string `form:"password"`
+	Hobby []string `form:"hobby"`
+}
+
+func (c *TestController) TForm() {
+	u := User{}
+	err := c.ParseForm(&u)
+	if err != nil {
+		c.Ctx.WriteString("post提交失败")
+		return
+	}
+	fmt.Printf("%#v", u)
+	c.Ctx.WriteString("解析post成功")
+}
