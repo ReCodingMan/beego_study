@@ -37,9 +37,9 @@ func (c *TestController) TPost() {
 
 //定义一个结构体
 type User struct {
-	Username string `form:"username"`
-	Password string `form:"password"`
-	Hobby []string `form:"hobby"`
+	Username string `form:"username" json:"username2"`
+	Password string `form:"password" json:"password2"`
+	Hobby []string `form:"hobby" json:"hobby2"`
 }
 
 func (c *TestController) TForm() {
