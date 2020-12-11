@@ -17,3 +17,8 @@ func (c *TestController) Get() {
 func (c *TestController) TestPost() {
 	c.Ctx.WriteString("新闻列表")//直接页面返回数据
 }
+
+func (c *TestController) TGet() {
+	id := c.GetString("id")
+	c.Ctx.WriteString("测试test方法" + id)//直接页面返回数据
+}
