@@ -15,4 +15,5 @@ func init() {
     beego.Router("/tgetdata", &controllers.TestController{}, "get:TGetData")
     beego.Router("/tput", &controllers.TestController{}, "put:TPut")
     beego.Router("/tdelete", &controllers.TestController{}, "delete:TDelete")
+    beego.Router("/xml", &controllers.XmlController{}, "post:Xml")
 }
