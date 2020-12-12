@@ -62,3 +62,11 @@ func (c *TestController) TGetData() {
 	c.Data["json"] = u
 	c.ServeJSON()
 }
+
+func (c *TestController) TPut() {
+	c.Ctx.WriteString("put 请求")
+}
+
+func (c *TestController) TDelete() {
+	c.Ctx.WriteString("delete 请求")
+}
