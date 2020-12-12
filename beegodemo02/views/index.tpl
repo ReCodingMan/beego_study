@@ -83,14 +83,25 @@
   <footer>
     <div class="author">
       Official website:
-      <a href="http://<<.Website>>"><<.Website>></a> /
+      <a href="http://{{.Website}}">{{.Website}}</a> /
       Contact me:
-      <a class="email" href="mailto:<<.Email>>"><<.Email>></a>
+      <a class="email" href="mailto:{{.Email}}">{{.Email}}</a>
       Contact me:
-      <a class="email" href="mailto:<<.num>>"><<.num>></a>
+      <a class="email" href="mailto:{{.num}}">{{.num}}</a>
       Contact me:
-      <a class="email" href="mailto:<<.flag>>"><<.flag>></a>
+      <a class="email" href="mailto:{{.flag}}">{{.flag}}</a>
+      Contact me:
+      <a class="email" href="mailto:{{.article.Title}}">{{.article.Title}}</a>
+      <a class="email" href="mailto:{{.article.Content}}">{{.article.Content}}</a>
     </div>
+
+    <h2>
+      <ul>
+        {{range $key,$val := .sliceList}}
+        <li>{{$key}}---{{$val}}</li>
+        {{end}}
+      </ul>
+    </h2>
   </footer>
   <div class="backdrop"></div>
 
