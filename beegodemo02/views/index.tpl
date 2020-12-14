@@ -144,6 +144,8 @@
     <div>{{template "aaa" .}}</div>
     <div>{{template "aaa" .}}</div>
 
+    {{template "/public/header.tpl" .}}
+    {{template "/public/footer.tpl" .}}
   </footer>
   <div class="backdrop"></div>
 
