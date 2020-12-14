@@ -144,6 +144,11 @@
     <div>{{template "aaa" .}}</div>
     <div>{{template "aaa" .}}</div>
 
+    <div>{{.unix}}</div>
+    <div>{{unixToDate .unix}}</div>
+    <div>{{.unix | unixToDate}}</div>
+
+
     {{template "/public/header.tpl" .}}
     {{template "/public/footer.tpl" .}}
   </footer>

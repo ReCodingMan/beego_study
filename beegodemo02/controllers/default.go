@@ -72,6 +72,7 @@ func (c *MainController) Get() {
 
 	//7、bool类型
 	c.Data["flag"] = false
+	c.Data["unix"] = 1607947412
 
 	c.TplName = "index.tpl"
 }
