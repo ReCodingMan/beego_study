@@ -119,6 +119,31 @@
       </ul>
     </h2>
 
+    <h2>
+      <ul>
+        {{range $key,$val := .cmsList}}
+          <li>{{$key}}---{{$val.Title}}</li>
+        {{end}}
+      </ul>
+    </h2>
+
+    <h2>
+      {{if eq .flag false}}
+        这是flag内容
+      {{end}}
+    </h2>
+
+    <h2>
+      {{define "aaa"}}
+        <h4>这是自定义代码块</h4>
+        <p>1111</p>
+        <p>2222</p>
+      {{end}}
+    </h2>
+
+    <div>{{template "aaa" .}}</div>
+    <div>{{template "aaa" .}}</div>
+
   </footer>
   <div class="backdrop"></div>
 

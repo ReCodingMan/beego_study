@@ -55,5 +55,23 @@ func (c *MainController) Get() {
 		},
 	}
 
+	//6、匿名结构体
+	c.Data["cmsList"] = []struct{
+		Title string
+	}{
+		{
+			Title: "这是标题11111",
+		},{
+			Title: "这是标题22222",
+		},{
+			Title: "这是标题33333",
+		},{
+			Title: "这是标题44444",
+		},
+	}
+
+	//7、bool类型
+	c.Data["flag"] = false
+
 	c.TplName = "index.tpl"
 }
