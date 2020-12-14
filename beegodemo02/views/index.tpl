@@ -102,6 +102,23 @@
         {{end}}
       </ul>
     </h2>
+
+    <h2>
+      <ul>
+        {{range $key,$val := .userInfo}}
+          <li>{{$key}}---{{$val}}</li>
+        {{end}}
+      </ul>
+    </h2>
+
+    <h2>
+      <ul>
+        {{range $key,$val := .articleList}}
+          <li>{{$key}}---{{$val.Title}}---{{$val.Content}}</li>
+        {{end}}
+      </ul>
+    </h2>
+
   </footer>
   <div class="backdrop"></div>
 

@@ -31,5 +31,29 @@ func (c *MainController) Get() {
 	//3、模版循环切片
 	c.Data["sliceList"] = []string{"php", "java", "golang"}
 
+	//4、模版中循环map
+	userInfo := make(map[string]interface{})
+	userInfo["username"] = "张三"
+	userInfo["age"] = 20
+	userInfo["sex"] = "男"
+	c.Data["userInfo"] = userInfo
+
+	//5、循环遍历结构体类型
+	c.Data["articleList"] = []Article{
+		{
+			Title: "这是title",
+			Content: "这是内容",
+		},{
+			Title: "这是title",
+			Content: "这是内容",
+		},{
+			Title: "这是title",
+			Content: "这是内容",
+		},{
+			Title: "这是title",
+			Content: "这是内容",
+		},
+	}
+
 	c.TplName = "index.tpl"
 }
