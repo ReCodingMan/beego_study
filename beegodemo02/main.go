@@ -13,5 +13,6 @@ func main() {
 	//beego.BConfig.WebConfig.TemplateRight = ">>"
 
 	beego.AddFuncMap("unixToDate", models.UnixToDate)
+	beego.AddFuncMap("dateToUnix", models.DateToUnix)
 	beego.Run()
 }
