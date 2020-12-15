@@ -151,6 +151,10 @@
 
     {{template "/public/header.tpl" .}}
     {{template "/public/footer.tpl" .}}
+
+    <h2>{{config "String" "appname" ""}}</h2>
+    <h2>{{config "String" "dev::appname" ""}}</h2>
+
   </footer>
   <div class="backdrop"></div>
 

@@ -2,6 +2,7 @@ package controllers
 
 import "C"
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 )
 
@@ -73,6 +74,9 @@ func (c *MainController) Get() {
 	//7、bool类型
 	c.Data["flag"] = false
 	c.Data["unix"] = 1607947412
+
+	httpport := beego.AppConfig.String("httpport")
+	fmt.Println(httpport)
 
 	c.TplName = "index.tpl"
 }
